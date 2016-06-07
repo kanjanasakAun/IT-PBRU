@@ -1,6 +1,7 @@
 package mangmee.kanjanasak.itpbru;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,8 +19,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         myManage = new MyManage(this);
+
+        deleteAllSQLite();
     }   //Main Method
-          // myManage.addNewUser("123","name","sur","suer","pass")
+
+    private  void  deleteAllSite(){
+        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyOpenHelper.database_name,
+                MODE_PRIVATE,null)
+                sqLiteDatabase.delete(MyManage.user_table,null,null)
+    }
 
 
     public void clickSignUpMain(View view) {
