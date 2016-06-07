@@ -12,6 +12,7 @@ public class SignUpActivity extends AppCompatActivity {
     //Explicit ประกาศตัวแปร
     private EditText nameEditText,surnameEditText,userEditText,passwordEditText;
     private  String nameString,surnameString,userString,passwordString;
+    private static final String urlUpload = "http://swiftcodingthai.com/pbru2/add_user_master.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +43,14 @@ public class SignUpActivity extends AppCompatActivity {
 
         } else {
             //False
+            uploadValueToServer();
         }
 
     }//clickSign
+
+    private void uploadValueToServer() {
+
+    } // upload
 
     private boolean checkSpace() {
         boolean result = true;
